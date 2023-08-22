@@ -30,7 +30,7 @@ public class SavingAccountTest {
 
         account.add(0);
 
-        Assertions.assertEquals(2_000, account.getBalance());
+        Assertions.assertEquals(2_000 + 0, account.getBalance());
     }
 
     @Test
@@ -100,5 +100,13 @@ public class SavingAccountTest {
         account.yearChange();
 
         Assertions.assertEquals(0, account.yearChange());
+    }
+
+    @Test
+    public void IllegalArgumentExceptionTest() {
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            SavingAccount account = new SavingAccount(2000, 1000, 10000, -5);
+        });
     }
 }
