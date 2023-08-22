@@ -18,4 +18,87 @@ public class SavingAccountTest {
 
         Assertions.assertEquals(2_000 + 3_000, account.getBalance());
     }
+
+    @Test
+    public void shouldAddZero() {
+        SavingAccount account = new SavingAccount(
+                2_000,
+                1_000,
+                10_000,
+                5
+        );
+
+        account.add(0);
+
+        Assertions.assertEquals(2_000, account.getBalance());
+    }
+
+    @Test
+    public void shouldAddMoreThanMaxBalance() {
+        SavingAccount account = new SavingAccount(
+                2_000,
+                1_000,
+                10_000,
+                5
+        );
+
+        account.add(9000);
+
+        Assertions.assertEquals(10_000, account.getMaxBalance());
+
+    }
+
+    @Test
+    public void shouldAddNegativeBalance() {
+        SavingAccount account = new SavingAccount(
+                2_000,
+                1_000,
+                10_000,
+                5
+        );
+
+        account.add(-1000);
+
+        Assertions.assertEquals(2000, account.getBalance());
+    }
+
+    @Test
+    public void shouldTestPay() {
+        SavingAccount account = new SavingAccount(2000, 1000, 10_000, 5);
+        account.pay(100);
+
+        Assertions.assertEquals(2000 - 100, account.getBalance());
+    }
+
+    @Test
+    public void shouldTestPay2() {
+        SavingAccount account = new SavingAccount(2000, 1000, 10_000, 5);
+        account.pay(1000);
+
+        Assertions.assertEquals(2000 - 1000, account.getBalance());
+    }
+
+    @Test
+    public void shouldTestPay3() {
+        SavingAccount account = new SavingAccount(2000, 1000, 10_000, 5);
+        account.pay(10000);
+
+        Assertions.assertEquals(2000, account.getBalance());
+    }
+
+    @Test
+    public void shouldTestYearChange() {
+        SavingAccount account = new SavingAccount(2000, 1000, 10_000, 5);
+        account.yearChange();
+
+        Assertions.assertEquals(100, account.yearChange());
+    }
+
+    @Test
+    public void shouldTestYearChange2() {
+        SavingAccount account = new SavingAccount(-2000, 1000, 10_000, 5);
+        account.yearChange();
+
+        Assertions.assertEquals(0, account.yearChange());
+    }
 }
