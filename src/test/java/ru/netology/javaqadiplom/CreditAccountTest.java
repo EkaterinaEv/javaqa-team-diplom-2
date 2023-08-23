@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 public class CreditAccountTest {
 
-    @Test// amount >0
+    @Test// amount > 0 BAG
     public void shouldAddToPositiveBalance() {
         CreditAccount account = new CreditAccount(
                 300,
@@ -14,22 +14,21 @@ public class CreditAccountTest {
                 15
         );
         account.add(3_000);
-        Assertions.assertEquals(3_000, account.getBalance());
+        Assertions.assertEquals(3_300, account.getBalance());
     }
 
-    @Test// amount <0
+    @Test// amount < 0
     public void shouldAddToNegativeBalance() {
         CreditAccount account = new CreditAccount(
                 300,
                 5_000,
-
                 15
         );
         account.add(-3_000);
         Assertions.assertEquals(300, account.getBalance());
     }
 
-    @Test//amount =0
+    @Test//amount = 0
     public void shouldAddToZeroBalance() {
         CreditAccount account = new CreditAccount(
                 300,
@@ -40,8 +39,7 @@ public class CreditAccountTest {
         Assertions.assertEquals(300, account.getBalance());
     }
 
-
-    @Test// BAG! initialBalance - неотрицательное число
+    @Test// initialBalance < 0
     public void shouldAddToNegativeInitialBalance() {
         CreditAccount account = new CreditAccount(
                 -300,
@@ -52,7 +50,7 @@ public class CreditAccountTest {
         Assertions.assertEquals(3000, account.getBalance());
     }
 
-    @Test// initialBalance=0
+    @Test// initialBalance = 0
     public void shouldAddToZeroInitialBalance() {
         CreditAccount account = new CreditAccount(
                 0,
@@ -63,9 +61,10 @@ public class CreditAccountTest {
         Assertions.assertEquals(3000, account.getBalance());
     }
 
-    @Test// BAG! creditLimit - неотрицательное число
+    @Test// creditLimit < 0
     public void shouldAddToNegativeCreditLimit() {
         CreditAccount account = new CreditAccount(
+
                 300,
                 -5_000,
                 15
@@ -74,7 +73,7 @@ public class CreditAccountTest {
         Assertions.assertEquals(3000, account.getBalance());
     }
 
-    @Test// creditLimit =0
+    @Test// creditLimit = 0
     public void shouldAddToZeroCreditLimit() {
         CreditAccount account = new CreditAccount(
                 300,
@@ -85,20 +84,18 @@ public class CreditAccountTest {
         Assertions.assertEquals(3000, account.getBalance());
     }
 
-    @Test// amount >0
+    @Test// amount > 0 BAG
     public void shouldAddToPositivePay() {
         CreditAccount account = new CreditAccount(
                 300,
                 5_000,
                 15
         );
-
-        account.pay(6000);
-
-        Assertions.assertEquals(-5700, account.getBalance());
+        account.pay(200);
+        Assertions.assertEquals(100, account.getBalance());
     }
 
-    @Test// amount =0
+    @Test// amount = 0
     public void shouldAddToZeroPay() {
         CreditAccount account = new CreditAccount(
                 300,
@@ -109,8 +106,7 @@ public class CreditAccountTest {
         Assertions.assertEquals(300, account.getBalance());
     }
 
-    @Test// amount <0
-
+    @Test// amount < 0
     public void shouldAddToNegativePay() {
         CreditAccount account = new CreditAccount(
                 300,
@@ -121,32 +117,26 @@ public class CreditAccountTest {
         Assertions.assertEquals(300, account.getBalance());
     }
 
-//    @Test// ДОПИСАТЬ! на выброс исключения в конструкторе
+    @Test// на выброс исключения в конструкторе
+    public void illegalArgumentExceptionTest() {
+        Assertions.assertThrows(IllegalArgumentException.class, () ->
+        {
+            CreditAccount account = new CreditAccount(300, 5_000, -10);
+        });
+    }
 
-//    public void illegalArgumentExceptionTest() {
-//        CreditAccount account = new CreditAccount(
-//                300,
-//                5_000,
-//                -10
-//        );
-//        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-//            account.что - то;
-//        });
-//
-//    }
-
-    @Test// BAG??? если на счёте 200, expected = 0
+    @Test// BAG
     public void yearChangeTest() {
+
         CreditAccount account = new CreditAccount(
                 200,
                 5_000,
-                15
-        );
+                15);
         account.yearChange();
-        Assertions.assertEquals(30, account.yearChange());
+        Assertions.assertEquals(0, account.yearChange());
     }
 
-    @Test// если на счёте -200
+    @Test//
     public void yearChangeTest2() {
         CreditAccount account = new CreditAccount(
                 -200,
@@ -156,5 +146,4 @@ public class CreditAccountTest {
         account.yearChange();
         Assertions.assertEquals(-30, account.yearChange());
     }
-
 }
