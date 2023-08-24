@@ -85,6 +85,13 @@ public class SavingAccountTest {
 
         Assertions.assertEquals(2000, account.getBalance());
     }
+    @Test
+    public void shouldTestNegativeAmount() {
+        SavingAccount account = new SavingAccount(2000, 1000, 10_000, 5);
+        account.pay(-500);
+
+        Assertions.assertFalse(account.pay(-500));
+    }
 
     @Test
     public void shouldTestYearChange() {
