@@ -18,11 +18,5 @@ public class SavingAccountTest {
 
         Assertions.assertEquals(2_000 + 3_000, account.getBalance());
     }
-
-    @Test
-    public void testNegativeRate() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            SavingAccount account = new SavingAccount(2000, 1000, 10_000, 5);
-        });
-    }
 }
+

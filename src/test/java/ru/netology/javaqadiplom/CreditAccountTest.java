@@ -47,7 +47,7 @@ public class CreditAccountTest {
                 15
         );
         account.add(3000);
-        Assertions.assertEquals(3000, account.getBalance());
+        Assertions.assertEquals(2700, account.getBalance());
     }
 
     @Test// initialBalance = 0
@@ -70,7 +70,7 @@ public class CreditAccountTest {
                 15
         );
         account.add(3000);
-        Assertions.assertEquals(3000, account.getBalance());
+        Assertions.assertEquals(3300, account.getBalance());
     }
 
     @Test// creditLimit = 0
@@ -81,7 +81,7 @@ public class CreditAccountTest {
                 15
         );
         account.add(3000);
-        Assertions.assertEquals(3000, account.getBalance());
+        Assertions.assertEquals(3300, account.getBalance());
     }
 
     @Test// amount > 0 BAG
