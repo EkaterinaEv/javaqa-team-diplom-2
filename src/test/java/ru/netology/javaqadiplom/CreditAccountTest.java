@@ -119,7 +119,7 @@ public class CreditAccountTest {
     @Test// amount < 0
     public void shouldAddPay() {
         CreditAccount account = new CreditAccount(
-                -3000,
+                -4000,
                 5_000,
                 15
         );
