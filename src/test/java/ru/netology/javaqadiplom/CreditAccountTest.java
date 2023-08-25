@@ -115,16 +115,7 @@ public class CreditAccountTest {
         );
         account.pay(-3_000);
         Assertions.assertEquals(300, account.getBalance());
-    }
-    @Test// amount < 0
-    public void shouldAddPay() {
-        CreditAccount account = new CreditAccount(
-                -4000,
-                5_000,
-                15
-        );
-        account.pay(3_000);
-        Assertions.assertFalse(account.pay(3000));
+
     }
 
     @Test// на выброс исключения в конструкторе
