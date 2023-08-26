@@ -91,8 +91,8 @@ public class CreditAccountTest {
                 5_000,
                 15
         );
-        account.pay(200);
-        Assertions.assertEquals(100, account.getBalance());
+        account.pay(250);
+        Assertions.assertEquals(50, account.getBalance());
     }
 
     @Test// amount = 0
