@@ -118,7 +118,7 @@ public class CreditAccountTest {
 
     }
 
-    @Test// на выброс исключения в конструкторе
+    @Test
     public void illegalArgumentExceptionTest() {
         Assertions.assertThrows(IllegalArgumentException.class, () ->
         {
