@@ -1,0 +1,25 @@
+[33m6cd4969[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: commit: Test added4
+[33m3d5e7e2[m HEAD@{1}: checkout: moving from credit to main
+[33mfe672e2[m[33m ([m[1;32mcredit[m[33m)[m HEAD@{2}: reset: moving to HEAD~1
+[33me0c630d[m HEAD@{3}: reset: moving to HEAD~1
+[33m4cb647f[m HEAD@{4}: reset: moving to HEAD~1
+[33ma3383ce[m HEAD@{5}: reset: moving to HEAD~1
+[33m76c6c51[m[33m ([m[1;31morigin/credit[m[33m)[m HEAD@{6}: commit: Tests changed2
+[33ma3383ce[m HEAD@{7}: commit: Tests changed
+[33m4cb647f[m HEAD@{8}: checkout: moving from main to credit
+[33m3d5e7e2[m HEAD@{9}: pull: Fast-forward
+[33m23f89ab[m HEAD@{10}: checkout: moving from credit to main
+[33m4cb647f[m HEAD@{11}: commit: Test pay added3
+[33me0c630d[m HEAD@{12}: commit: Test pay added2
+[33mfe672e2[m[33m ([m[1;32mcredit[m[33m)[m HEAD@{13}: commit: Test pay added
+[33m8ac73a1[m HEAD@{14}: commit: Methods added 2
+[33m9728872[m HEAD@{15}: commit: Methods added
+[33m02df1db[m HEAD@{16}: checkout: moving from saving to credit
+[33m383d0ee[m[33m ([m[1;32msaving[m[33m)[m HEAD@{17}: commit: Test add negative amount added
+[33m54da57b[m HEAD@{18}: checkout: moving from credit to saving
+[33m02df1db[m HEAD@{19}: commit: Creditclass changed
+[33m7cdcc36[m HEAD@{20}: checkout: moving from saving to credit
+[33m54da57b[m HEAD@{21}: commit: Tests exception added
+[33m3d10184[m HEAD@{22}: commit: Tests added
+[33m23f89ab[m HEAD@{23}: checkout: moving from main to saving
+[33m23f89ab[m HEAD@{24}: clone: from github.com:EkaterinaEv/javaqa-team-diplom-2.git

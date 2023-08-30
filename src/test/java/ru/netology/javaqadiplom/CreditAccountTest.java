@@ -91,8 +91,8 @@ public class CreditAccountTest {
                 5_000,
                 15
         );
-        account.pay(200);
-        Assertions.assertEquals(100, account.getBalance());
+        account.pay(100);
+        Assertions.assertEquals(200, account.getBalance());
     }
 
     @Test// amount = 0
@@ -118,7 +118,7 @@ public class CreditAccountTest {
 
     }
 
-    @Test// на выброс исключения в конструкторе
+    @Test
     public void illegalArgumentExceptionTest() {
         Assertions.assertThrows(IllegalArgumentException.class, () ->
         {
